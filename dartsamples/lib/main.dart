@@ -1,51 +1,45 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AppContato());
 }
 
-class MyApp extends StatelessWidget{
+class AppContato extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Scaffold(
+        appBar: AppBar(title: Text("App bar")),
+        body: Column(
+          children: [
+            Card(
+              child: ListTile(
+                title: Text("Titulo"),
+                subtitle: Text("Subtitulo"),
+                leading: Icon(Icons.motion_photos_on_rounded),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Titulo"),
+                subtitle: Text("Subtitulo"),
+                leading: Icon(Icons.motion_photos_on_rounded),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Titulo"),
+                subtitle: Text("Subtitulo"),
+                leading: Icon(Icons.motion_photos_on_rounded),
+              ),
+            )
+
+
+
+          ],
+        ),
+      ),
     );
   }
-}
 
-class HomePage extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return HomeState();
-  }
-}
-
-class HomeState extends State<HomePage>{
-  int numero=0;
-  void incrementar(){
-    setState(() {
-      numero++;
-    });
-  }
-  void zerar(){
-    setState(() {
-      numero=0;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-          appBar: AppBar(title: Text('Desenv. Apps Móveis'),),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('$numero'),
-                ElevatedButton(onPressed: incrementar, child: Text('incrementar')),
-                ElevatedButton(onPressed: zerar, child: Text('zerar'))
-              ],
-            ),
-          )
-      );
-  }
 }

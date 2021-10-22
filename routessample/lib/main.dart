@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:routessample/dashboard.dart';
 
 void main() {
   runApp(
@@ -11,50 +12,11 @@ class Programa extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Principal(),
-    );
-  }
-
-}
-
-class Principal extends StatelessWidget{
-  const Principal({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Principal"),),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Secundaria()));
-          },
-          child: const Text("go"),
-        ),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("App de Filmes"),),
+        body: DashBoard(),
+      )
     );
   }
 }
-
-class Secundaria extends StatelessWidget{
-  const Secundaria({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Secundaria"),),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text("back"),
-        ),
-      ),
-    );
-  }
-  
-}
-
-

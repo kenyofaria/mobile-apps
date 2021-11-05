@@ -25,7 +25,7 @@ class NovoItemState extends State<NovoItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title:Text('Novo filme')),
+        appBar: AppBar(title: const Text('Novo filme')),
         body: Column(
           children: [
             TextField(
